@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;500;600;700;800&display=swap');
+
+:root {
+    --LightModeText: hsl(200, 15%, 8%);
+    --LightModeInput: hsl(0, 0%, 52%);
+    --LightModeElements: hsl(0, 0%, 100%);
+    --LightModeBackground: hsl(0, 0%, 98%);
+}
+
+.dark {
+    --DarkModeElements: hsl(209, 23%, 22%);
+    --DarkModeBackground: hsl(207, 26%, 17%);
+    --DarkModeText: hsl(0, 0%, 100%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--LightModeBackground);
+    width: 100%;
+    min-height: 100vh;
+    color: var(--LightModeText);
+    font-family: 'Nunito Sans', sans-serif;
+    background: var(--DarkModeBackground);
+}
+
+main {
+    position: relative;
+}
+
+.container {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.main-container {
+}
+
+header {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background: var(--DarkModeElements);
+    color: var(--DarkModeText);
+}
+
+.header-container {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+i {
+    cursor: pointer;
+    color: var(--DarkModeText);
+}
+.search-container {
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+.toggle {
+    font-size: 18px;
+    color: var(--LightModeText);
+    color: var(--DarkModeText);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-text {
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.toggle i {
+    padding: 5px;
+}
+
+.form-control {
+    width: 400px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.form-control input {
+    width: 100%;
+    padding: 17px 0 17px 50px;
+    color: var(--LightModeInput);
+    outline: 0;
+    border: 0;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    background-color: var(
+        --DarkModeText-LightModeElements
+    );
+    background: var(--DarkModeElements);
+    color: var(--DarkModeText);
+}
+
+.form-control input::placeholder {
+    color: var(--placeholder);
+}
+
+.form-control i {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    cursor: pointer;
+}
+
+.dropDownCon {
+    width: 200px;
+    position: relative;
+}
+
+.dropdown {
+    width: 100%;
+    padding: 17px 14px 17px 50px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    color: var(--DarkModeText);
+    font-size: 15px;
+    background: var(--DarkModeElements);
+}
+
+.chevron {
+    color: var(--DarkModeText);
+}
+
+.region {
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    list-style-type: none;
+    padding: 5px 15px;
+    color: var(--DarkModeText);
+}
+
+.drop {
+    position: absolute;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    top: 4rem;
+    padding: 10px 0;
+
+    width: 100%;
+    border-radius: 5px;
+    z-index: 999;
+    display: none;
+    background: var(--LightModeElements);
+}
+
+.drop.dark {
+    color: var(--DarkModeText);
+    background: var(--DarkModeElements);
+}
+
+.drop p {
+    margin: 0.5 0;
+}
+
+.countries {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(250px, 1fr)
+    );
+    grid-gap: 40px;
+    justify-content: center;
+}
+
+.country {
+    min-height: 350px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background: var(--DarkModeElements);
+    border-radius: 5px;
+    overflow: hidden;
+    color: var(--DarkModeText);
+}
+
+.fas {
+    color: white;
+}
+
+.country-img {
+    height: 200px;
+}
+
+.country-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.country-info {
+    padding: 20px 17px;
+}
+
+.country-info h5 {
+    padding: 10px 0;
+    font-size: 20px;
+    letter-spacing: 0.8px;
+}
+
+.country-info p > strong {
+    font-weight: 600;
+}
+
+.showDropDown {
+    display: block;
+}
+
+.countryAboutModal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    padding: 50px;
+    margin: 0 auto;
+    background-color: var(--LightModeBackground);
+    display: none;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.countryAboutModal.dark {
+    background: var(--DarkModeBackground);
+    color: var(--DarkModeText);
+}
+
+.back {
+    background: var(--LightModeElements);
+    padding: 10px 20px;
+    box-shadow: 0 0 5px rgb(0, 0, 0, 0.3);
+    border-radius: 5px;
+    cursor: pointer;
+    background: var(--DarkModeElements);
+    color: var(--DarkModeText);
+}
+
+.modal-container {
+    display: flex;
+    align-items: center;
+    height: 70vh;
+}
+
+.modal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 350px;
+    width: 100%;
+    align-self: center;
+}
+
+.countryFlag {
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.leftModal {
+    width: 50%;
+    height: 350px;
+}
+/* 
+.leftModal img {
+  width: 100%;
+  object-fit: cover;
+} */
+
+.rightModal {
+    width: 50%;
+    margin-left: 40px;
+}
+
+.modalInfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rightModal h1 {
+    margin: 10px 0;
+    letter-spacing: 1px;
+    font-size: 40px;
+}
+
+.inner p {
+    letter-spacing: 1px;
+}
+
+.innerLeft p,
+.innerright p {
+    padding-bottom: 10px;
+}
+
+.inner p > strong {
+    font-weight: 600;
+}
+
+.borders-container {
+    display: flex;
+    margin-top: 40px;
+    gap: 10px;
+    align-items: center;
+}
+
+.borders {
+    display: flex;
+    gap: 20px;
+}
+
+.borders button {
+    border: 1px solid;
+    padding: 5px 25px;
+    border-radius: 3px;
+}
+.showModal {
+    display: block;
+}
+
+@media screen and (max-width: 426px) {
+    .search-container {
+        flex-direction: column;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+    .form-control {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .countries {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .modal {
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+
+    .leftModal {
+        width: 100%;
+        margin-top: 40px;
+    }
+    .countryFlag {
+        width: 100%;
+        height: 200px;
+    }
+
+    .countryAboutModal {
+        padding: 20px;
+    }
+
+    .modalInfo {
+        flex-direction: column;
+        width: 100%;
+    
+    }
+
+    .rightModal {
+        width: 100%;
+        margin: 0;
+    }
+
+    .name{
+      font-size: 25px !important;
+    }
+}
